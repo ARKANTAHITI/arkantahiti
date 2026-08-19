@@ -1,309 +1,725 @@
-/* Mise en forme de la page d'accueil */
+/* =========================================================
+   ARKAN TAHITI
+   CSS RESPONSIVE
+   Ordinateur + Tablette + Téléphone
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
 
 body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: rgb(0, 0, 0);
+    background-color: #000;
     color: aliceblue;
     text-align: center;
 
+    overflow-x: hidden;
 }
 
-.navigation {
 
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation {
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: black;
+    min-height: 100px;
+
+    background-color: #000;
+
+    padding: 10px 25px;
+
+    gap: 20px;
 }
 
-.logo img{
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
 
     width: 100px;
-    margin: 0%;
-    display: block;
-    background-color: black;
+    height: auto;
+
+    background-color: #000;
 }
 
 
+/* =========================================================
+   NOM ARKAN
+   ========================================================= */
+
+.name {
+    flex-shrink: 0;
+}
+
 .name img {
+    display: block;
 
     width: 200px;
     height: auto;
-    background-color: black;
+
+    background-color: #000;
 }
 
-.facebook img {
 
+/* =========================================================
+   RESEAUX SOCIAUX
+   ========================================================= */
+
+.facebook,
+.instagram,
+.tiktok {
+    flex-shrink: 0;
+}
+
+.facebook img,
+.instagram img,
+.tiktok img {
+    display: block;
+
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.tiktok img {
     width: 50px;
     height: 50px;
-    align-items: center;
-    position: absolute;
-    left: 350px;
-    top: 30px;
-    transition: transform 0.3s ease;
 }
 
-.facebook img:hover{
 
-    transform: scale(1.5);
+.facebook img:hover,
+.instagram img:hover,
+.tiktok img:hover {
+    transform: scale(1.25);
 }
 
-.instagram img {
 
-    width: 50px;
-    height: 50px;
-    align-items: center;
-    position: absolute;
-    left: 400px;
-    top: 30px;
-    transition: transform 0.3s ease;
-}
-
-.instagram img:hover{
-
-    transform: scale(1.5);
-}
-.tiktok img{
-
-    width: 60px;
-    height: 60px;
-    align-items: center;
-    position: absolute;
-    left: 445px;
-    top: 26px;
-    transition: transform 0.3s ease;
-
-}
-
-.tiktok img:hover{
-
-    transform: scale(1.5);
-
-}
+/* =========================================================
+   MENU
+   ========================================================= */
 
 nav {
     display: flex;
-    gap: 30px;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
     margin-left: auto;
-    margin-right: 40px;
 }
 
 nav a {
     color: white;
+
     text-decoration: none;
-    font-size: 20px;
+
+    font-size: 18px;
+
     padding: 10px 15px;
+
     border-radius: 30px;
-    transition: transform 0.5s ease;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
 }
 
-nav a:hover{
-
+nav a:hover {
     color: white;
+
     background-color: blueviolet;
-    transform: scale(1.1);
+
+    transform: scale(1.08);
 }
+
+
+/* =========================================================
+   BANNIERE
+   ========================================================= */
 
 .back {
+    position: relative;
 
     width: 100%;
-
 }
-.back img{
+
+.back > img {
+    display: block;
 
     width: 100%;
-    height: 400px;
-    background-image: url(Image/Banner\ FB.jpg);
+    height: auto;
+
+    object-fit: cover;
+
     opacity: 0.7;
 }
 
+
+/* =========================================================
+   PRESENTATION
+   ========================================================= */
+
 .presentation {
-
-    background-color: rgb(0, 0, 0);
-    padding: 30px;
-    margin: 30px auto;
-    width: 300px;
-    height: 200px;
-    
-}
-
-h1 {
-
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    animation: apparition 5s ease;
-    color: rgb(255, 255, 255);
-    font-size: 100px;
     position: absolute;
-    left: 50px;
-    top: 600px;
 
-}
-@keyframes apparition {
-    from{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0px)
-    }
-}
+    left: 50%;
+    top: 50%;
 
-p { 
+    transform: translate(-50%, -50%);
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    animation: texte 5s ease;
-    font-size: 20px;
-    font-family: fantasy;
+    width: 90%;
+    max-width: 700px;
 
+    padding: 20px;
 
-}
-@keyframes texte {
-    from{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0px);
-    }
+    background-color: rgba(0, 0, 0, 0.55);
 
-
+    border-radius: 15px;
 }
 
-.mana {
+.presentation p {
+    font-size: 28px;
 
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 0px;
-    top: 520px;
+    font-family: "Bebas Neue", sans-serif;
 
+    letter-spacing: 2px;
 }
 
-.mana img{
 
-    width: 290px;
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================================================
+   MANNEQUINS
+   ========================================================= */
+
+main {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* Chaque personnage */
+
+.mana,
+.will,
+.lena,
+.dk {
+    position: static;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* Images des personnages */
+
+.mana img,
+.will img,
+.lena img,
+.dk img {
+    display: block;
+
+    width: 100%;
+    max-width: 300px;
+
     height: 500px;
-    border: solid;
-    color: rgb(255, 136, 0);
+
+    object-fit: cover;
+
+    border: 2px solid;
+
     transition: transform 0.3s ease;
-
 }
 
-.mana img:hover{
-    
-    transform: scale(1.1);
-    
 
+/* Couleurs des bordures */
+
+.mana img {
+    border-color: rgb(255, 136, 0);
 }
 
-.will {
-
-   
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 295px;
-    top: 520px;
- 
-}
-.will img{
-
-    width: 300px;
-    height: 500px;
-    border: solid;
-    color: rgba(255, 0, 0, 0.508);
-    transition: transform 0.3s ease;
-
-}
-
-.will img:hover{
-
-    transform: scale(1.1);
-    
-}
-
-.lena {
- 
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    right: 410px;
-    top: 520px;
+.will img {
+    border-color: rgba(255, 0, 0, 0.508);
 }
 
 .lena img {
-
-    width: 300px;
-    height: 500px;
-    border: solid;
-    color: rgb(255, 0, 0);
-    transition: transform 0.3s ease;
-
-}
-
-.lena img:hover{
-
-    transform: scale(1.1);
-
-}
-
-.dk {
-
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    right: 105px;
-    top: 520px;
+    border-color: rgb(255, 0, 0,508);
 }
 
 .dk img {
-    
-    width: 290px;
-    height: 500px;
-    border: solid;
-    color: rgb(255, 136, 0);
-    transition: transform 0.3s ease;
-
+    border-color: rgb(255, 136, 0);
 }
 
-.dk img:hover{
 
-    transform: scale(1.1);
+/* Animation au survol */
+
+.mana img:hover,
+.will img:hover,
+.lena img:hover,
+.dk img:hover {
+    transform: scale(1.05);
 }
-footer{
 
-    
-    background-color: blueviolet;
+
+/* =========================================================
+   TITRE MANNEQUIN
+   ========================================================= */
+
+.mana h1,
+.will h2,
+.lena h3,
+.dk h4 {
+
+    position: static;
+
+    width: auto;
     height: auto;
-    width: 100%;
-    position: absolute;
-    top: 2000px;
-    
+
+    margin-top: 15px;
+
+    color: white;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 45px;
+
+    text-decoration: none;
+
+    animation: apparition 2s ease;
 }
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes texte {
+    from {
+        opacity: 0;
+
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    background-color: blueviolet;
+
+    padding: 50px 20px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   TITRE FOOTER
+   ========================================================= */
 
 h2 {
-
     color: white;
+
     text-decoration: underline;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: bottom 20px;
-    width: 40px;
-    
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+
+    width: auto;
 }
 
-p1{
+
+/* =========================================================
+   TEXTE FOOTER
+   ========================================================= */
+
+p1 {
+    display: block;
+
     color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+    font-family: system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    max-width: 900px;
+
+    margin: 0 auto;
 }
 
-/* Mise en forme de la boutique */
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navigation {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 15px;
+    }
 
 
+    nav {
+        width: 100%;
+
+        margin-left: 0;
+
+        justify-content: center;
+
+        margin-top: 10px;
+    }
 
 
+    main {
+        grid-template-columns: repeat(2, 1fr);
+
+        padding: 50px 30px;
+    }
 
 
+    .back > img {
+        height: 350px;
+    }
+
+
+    .presentation p {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   PETITE TABLETTE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .navigation {
+        gap: 10px;
+
+        padding: 10px;
+    }
+
+
+    .logo img {
+        width: 80px;
+    }
+
+
+    .name img {
+        width: 160px;
+    }
+
+
+    .facebook img,
+    .instagram img {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .tiktok img {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    nav {
+        gap: 5px;
+    }
+
+
+    nav a {
+        font-size: 16px;
+
+        padding: 8px 12px;
+    }
+
+
+    main {
+        padding: 40px 20px;
+    }
+
+
+    .mana img,
+    .will img,
+    .lena img,
+    .dk img {
+        height: 450px;
+    }
+}
+
+
+/* =========================================================
+   TELEPHONE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .navigation {
+        flex-direction: column;
+
+        padding: 15px 10px;
+    }
+
+
+    .logo img {
+        width: 75px;
+    }
+
+
+    .name img {
+        width: 170px;
+    }
+
+
+    /* Réseaux sociaux */
+
+    .facebook,
+    .instagram,
+    .tiktok {
+        display: inline-block;
+    }
+
+
+    .facebook img,
+    .instagram img {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .tiktok img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* Menu */
+
+    nav {
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        gap: 5px;
+
+        margin-top: 10px;
+    }
+
+
+    nav a {
+        font-size: 14px;
+
+        padding: 8px 10px;
+    }
+
+
+    /* Bannière */
+
+    .back > img {
+        width: 100%;
+
+        height: 220px;
+
+        object-fit: cover;
+    }
+
+
+    /* Présentation */
+
+    .presentation {
+        width: 90%;
+
+        padding: 15px;
+    }
+
+
+    .presentation p {
+        font-size: 21px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* Personnages */
+
+    main {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 40px 20px;
+    }
+
+
+    .mana img,
+    .will img,
+    .lena img,
+    .dk img {
+        width: 100%;
+
+        max-width: 300px;
+
+        height: auto;
+
+        max-height: 500px;
+
+        object-fit: cover;
+    }
+
+
+    /* Titre Mana */
+
+    .mana h1 {
+        font-size: 40px;
+
+        margin-top: 12px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 40px 15px;
+    }
+
+
+    h2 {
+        font-size: 30px;
+
+        margin-bottom: 20px;
+    }
+
+
+    p1 {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   TRES PETITS TELEPHONES
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .name img {
+        width: 150px;
+    }
+
+
+    nav a {
+        font-size: 13px;
+
+        padding: 7px 8px;
+    }
+
+
+    .presentation p {
+        font-size: 18px;
+    }
+
+
+    .mana h1 {
+        font-size: 35px;
+    }
+
+
+    p1 {
+        font-size: 14px;
+    }
+}
